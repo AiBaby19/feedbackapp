@@ -7,15 +7,9 @@ const showSkillsList = {
   height: '360px',
   backgroundColor: 'white',
   width: '25%',
-  // borderRadius: '2px',ffa500
-  // border:'solid 0.2px #ffa500',
   border:'solid 0.2px #9055fb',
   boxShadow: '0px 3px 12px 0px rgba(155, 155, 163, 1)',
   zIndex: '0'
-}
-
-const showSkills = {
-  
 }
 
 const rotate = {
@@ -37,11 +31,7 @@ const numberIcons = {
   maxWidth: '90%',
   textAlign: 'left',
   alignItems: 'center',
-  // backgroundColor: 'red'
 }
-
-
-
 
 @inject(allStores => ({
   certifications: allStores.store.certifications
@@ -67,15 +57,15 @@ class MeetMe extends Component {
         <br/>
         <div className="colorRow" style={{backgroundColor:'#F4F8F9', height:'200px',  zIndex: '-10', textAlign: 'center', opacity: '.2'}}></div>
         
-        <p className="introduction" style={{margin: '0 auto', marginTop: '-180px', color: '#9aa0a5', width: '50%', textAlign: 'center', fontSize: '15px', fontWeight: '300'}}> Nice to meet you! :) Im a Web Developer with an obssesion to build successful digital assets online.</p>
+        <p className="introduction" style={{margin: '0 auto', marginTop: '-180px', color: '#9aa0a5', width: '50%', textAlign: 'center', fontSize: '15px', fontWeight: '300'}}> Nice to meet you! :) Im a Full Stack Web Developer with an obssesion to build successful digital assets online.</p>
         
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '90%', margin: '0 auto', marginTop: '60px'}}>
           <div className="frontSkills" style={showSkillsList}>
-            <h3 style={{textAlign: 'center', paddingTop: '30px', marginBottom: '30px'}}>Front End</h3>
+            <h3 style={{textAlign: 'center', paddingTop: '30px', marginBottom: '30px'}}>Full Stack</h3>
 
             <div style={numberIcons}>
             <div>
-                <img src="/html5.svg" height="50px" width="40px" alt="html5"/>
+                <img src="/img/html5.svg" height="50px" width="40px" alt="html5"/>
               </div>
               <p style={{fontSize: '14px', }}>HTML & CSS</p>
               <div>97%</div>
@@ -83,15 +73,15 @@ class MeetMe extends Component {
 
             <div style={numberIcons}>
             <div>
-                <img src="/javascript.svg" height="50px" width="40px" alt="javascript"/>
+                <img src="/img/javascript.svg" height="50px" width="40px" alt="javascript"/>
               </div>
-              <p style={{fontSize: '14px', }}>JAVASCRIPT</p>
+              <p style={{fontSize: '14px', }}>JS / ES6&7</p>
               <div>97%</div>
             </div>
 
             <div style={numberIcons}>
             <div>
-                <img src="/react.svg" height="50px" width="40px" alt="react"/>
+                <img src="/img/react.svg" height="50px" width="40px" alt="react"/>
               </div>
               <p style={{fontSize: '14px', }}>REACT</p>
               <div>100%</div>
@@ -99,7 +89,7 @@ class MeetMe extends Component {
 
             <div style={numberIcons}>
             <div>
-                <img src="/nodejs.svg" height="50px" width="40px" alt="nodejs"/>
+                <img src="/img/nodejs.svg" height="50px" width="40px" alt="nodejs"/>
               </div>
               <p style={{fontSize: '14px', }}>NODEJS</p>
               <div>100%</div>
@@ -111,7 +101,7 @@ class MeetMe extends Component {
 
           <div style={numberIcons}>
             <div>
-            <img src="/ux.svg" height="50px" width="40px" alt="ux/ui"/>
+            <img src="/img/ux.svg" height="50px" width="40px" alt="ux/ui"/>
               </div>
               <p style={{fontSize: '14px', }}>UX/UI</p>
               <div>100%</div>
@@ -119,7 +109,7 @@ class MeetMe extends Component {
 
             <div style={numberIcons}>
             <div>
-            <img src="/selflearner.svg" height="50px" width="40px" alt="selflearner"/>
+            <img src="/img/selflearner.svg" height="50px" width="40px" alt="selflearner"/>
               </div>
               <p style={{fontSize: '14px', }}>AUTODIDACT</p>
               <div>100%</div>
@@ -127,7 +117,7 @@ class MeetMe extends Component {
 
             <div style={numberIcons}>
             <div>
-            <img src="/teamplayer.svg" height="50px" width="40px" alt="teamplayer"/>
+            <img src="/img/teamplayer.svg" height="50px" width="40px" alt="teamplayer"/>
               </div>
               <p style={{fontSize: '14px', }}>TEAM PLAYER</p>
               <div>100%</div>
@@ -135,7 +125,7 @@ class MeetMe extends Component {
 
             <div style={numberIcons}>
               <div>
-                <img src="/think.svg" height="50px" width="40px" alt="think" style={rotate}/>
+                <img src="/img/think.svg" height="50px" width="40px" alt="think" style={rotate}/>
                 </div>
                 <p style={{fontSize: '14px', }}>PROBLEM SOLVING</p>
                 <div>100%</div>
@@ -147,15 +137,13 @@ class MeetMe extends Component {
 
             {this.props.certifications.map((certification, index) => 
               
-              (<div style={numberIcons} onClick={()=>this.toggleModal(index)}>           
+              (<div key={index} style={numberIcons} onClick={()=>this.toggleModal(index)}>           
                 <div>
                   <img src={certification.smallImg} height="45px" width="65px" alt={certification.smallImgAlt}/>
                 </div>
                 <p style={{fontSize: '14px', margin: '0 auto'}}>{certification.title}</p> 
-              </div>)
-            
+              </div>) 
             )}
-
           </div>
         </div>
               {this.state.isModal ? <Modal closeModal={this.toggleModal} certificationIndex={this.state.certificationIndex} certifications={this.props.certifications}/> : null}

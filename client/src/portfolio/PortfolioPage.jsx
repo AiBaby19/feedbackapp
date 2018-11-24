@@ -41,19 +41,10 @@ class PortfolioPage extends Component {
               )})}
             </ul>
           </div>
-        </div>
-        
-        
+        </div> 
       </div>
      );
   }
 }
  
 export default PortfolioPage;
-
-
-{/* <div style={{display: 'flex', justifyContent: 'center', margin: '0 auto', marginTop: '410px', paddingRight: '100px'}}>
-</div> */}
-
-{/* <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', borderRadius: '2px', border: 'solid 1px #F7F7F7', margin: '0 5px', marginBottom: '60px', width:'200px', height: '280px', backgroundColor: 'white', boxShadow: '0px 3px 12px 0px rgba(155, 155, 163, 1)'
-                  }}> */}

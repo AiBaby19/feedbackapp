@@ -131,17 +131,17 @@
 }
 
 .scene:nth-child(2) .poster {
-  background-color: red;
+  /* background-color: red; */
   /* background-image: url('/public/triplanLogo.png'); */
 }
 
 .scene:nth-child(3) .poster {
-  background-color: red;
+  /* background-color: red; */
   /* background-image: url('/public/triplanLogo.png'); */
 }
 
 .scene:nth-child(4) .poster {
-  background-color: red;
+  /* background-color: red; */
   /* background-image: url('/public/triplanLogo.png'); */
 }
 

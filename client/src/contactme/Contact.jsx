@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios'; 
-
-
 
 const placeholderDesign = {
   border: 'none',
@@ -13,18 +10,16 @@ const placeholderDesign = {
   backgroundColor: '#FCFCFC'
 }
 
-const textAreaDesign = {
-  width: '100%',
-  minHeight: '12px',
-  marginTop: '30px',
-  marginBottom: '60px',
-  border: 'none',
-  borderBottom:'solid 0.2px #9055fb',
-  fontSize: '18px',
-  fontColor: '#585c61'
-}
-
-
+// const textAreaDesign = {
+//   width: '100%',
+//   minHeight: '12px',
+//   marginTop: '30px',
+//   marginBottom: '60px',
+//   border: 'none',
+//   borderBottom:'solid 0.2px #9055fb',
+//   fontSize: '18px',
+//   fontColor: '#585c61'
+// }
 
 class Contact extends Component {
   constructor() {
@@ -32,7 +27,7 @@ class Contact extends Component {
     this.state = {
       name: '',
       email: '',
-      content: ''
+      message: ''
     }
   }
 
@@ -44,81 +39,50 @@ class Contact extends Component {
     this.setState({ email: e.currentTarget.value });
    }
    
-   handleContent = (e) => {
-    this.setState({ content: e.currentTarget.value });
+   handleMessage = (e) => {
+    this.setState({ message: e.currentTarget.value });
    }
 
 
-  async sendEmail(e, name, email, message) {
-    // e.preventdefault()
-    // this.props.history.push('/contact/send')
-    // (async () => {
-      const rawResonse = await fetch('http://localhost:3000/contact/send', {
-        method: 'POST', 
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Content-Security-Policy': 'font-src *'
-        },
-        // body: JSON.stringify({
-        //   name: name,
-        //   email: email,
-        //   message: message
-        // })
-      })
-        .then(res => JSON.parse(res))
-        .then(res => console.log('response: ', res))
-        .catch(err => console.error('error: ', err))
-        
-  
+  async sendEmail(name, email, message) {
+    this.props.history.push('/contact/send')
+      const response = await fetch('/contact/send', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Content-Security-Policy': 'font-src *'
+      },
+      // x-www-form-urlencoded
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message
+    })
+    })
 
+      const body = await response.text().then(res=> console.log(res)).catch(err => console.log(err))
+      console.log('body',body)
 
-
-    // })
-      // this.props.history.push('/contact')
-  }
-
-  // sendEmail(e, name, email, message) {
-  //   // e.preventdefault()
-  //   // this.props.history.push('/contact/send')
-  //   fetch('http://localhost:3000/contact/send', {
-  //     method: 'POST', 
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json',
-  //       'Content-Security-Policy': 'font-src *'
-  //     },
-  //     body: JSON.stringify({
-  //       name: name,
-  //       email: email,
-  //       message: message
-  //     })
-  //   })
-  //     .then(res => JSON.parse(res))
-  //     .then(res => console.log('response: ', res))
-  //     .catch(err => console.error('error: ', err))
       
-
-  //     // this.props.history.push('/contact')
-  // }
-
-
+  }
 
   render() { 
     return ( 
       <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
         <h1 style={{margin: '20px 0px 60px 0px'}}>Contact Dror</h1>
-        <form method="POST" style={{margin: '0 auto', width: '39%', textAlign:'left', fontColor: '#e5e5e5'}}>
+        <form action="/contact/send" method="POST" style={{margin: '0 auto', width: '39%', textAlign:'left', fontColor: '#e5e5e5'}}>
           <input type="text" name="name" placeholder="Name" value={this.state.name} onChange={this.handleName} style={placeholderDesign} required/>
           <input type="email" name="email" placeholder="Email" value={this.state.email} onChange={this.handleEmail} style={placeholderDesign} required/>
-          <input type="text" name="content" placeholder="Message" value={this.state.content} onChange={this.handleContent} style={placeholderDesign} required/>
+          <input type="text" name="message" placeholder="Message" value={this.state.message} onChange={this.handleMessage} style={placeholderDesign} required/>
           {/* <div style={textAreaDesign} contentEditable="true">Messsage</div> */}
-          <button type="submit" onClick={()=>this.sendEmail(this.state.name, this.state.email, this.state.message)} style={{display:'flex', justifyContent: 'center', margin: '0 auto', textAlign: 'center', width: '120px', height: '35px', borderRadius: '8px', backgroundColor: '#ffaa19', color: 'white', fontSize: '16px'}}>Send</button>
+          <button type="button" onClick={()=>this.sendEmail(this.state.name, this.state.email, this.state.message)} style={{display:'flex', justifyContent: 'center', margin: '0 auto', textAlign: 'center', width: '120px', height: '35px', borderRadius: '8px', backgroundColor: '#ffaa19', color: 'white', fontSize: '16px'}}>Send</button>
         </form>
 
-       
-
-
+        <div className="social" style={{ display:'flex', flexDirection:'row', margin: '0 auto', textAlign: 'center', justifyContent:'space-between', marginTop:'30px', width:'300px'}}>
+          <img src="/img/git.jpg" alt="git" height="100" width="100"/>
+          <img src="/img/ld.png" alt="ld" height="100" width="100"/>
+        </div>
       </div>
      );
   }
