@@ -61,6 +61,7 @@ class MeetMe extends Component {
         
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '90%', margin: '0 auto', marginTop: '60px'}}>
           <div className="frontSkills" style={showSkillsList}>
+          {/* <button type="button" style={{display: 'flex', marginTop: '8px', border: 'none', color: '#FFAA19', fontSize: '24px'}}>+</button> */}
             <h3 style={{textAlign: 'center', paddingTop: '30px', marginBottom: '30px'}}>Full Stack</h3>
 
             <div style={numberIcons}>
@@ -68,7 +69,7 @@ class MeetMe extends Component {
                 <img src="/img/html5.svg" height="50px" width="40px" alt="html5"/>
               </div>
               <p style={{fontSize: '14px', }}>HTML & CSS</p>
-              <div>97%</div>
+              <div>95%</div>
             </div>
 
             <div style={numberIcons}>
@@ -76,7 +77,7 @@ class MeetMe extends Component {
                 <img src="/img/javascript.svg" height="50px" width="40px" alt="javascript"/>
               </div>
               <p style={{fontSize: '14px', }}>JS / ES6&7</p>
-              <div>97%</div>
+              <div>90%</div>
             </div>
 
             <div style={numberIcons}>
@@ -84,7 +85,7 @@ class MeetMe extends Component {
                 <img src="/img/react.svg" height="50px" width="40px" alt="react"/>
               </div>
               <p style={{fontSize: '14px', }}>REACT</p>
-              <div>100%</div>
+              <div>85%</div>
             </div>
 
             <div style={numberIcons}>
@@ -92,8 +93,10 @@ class MeetMe extends Component {
                 <img src="/img/nodejs.svg" height="50px" width="40px" alt="nodejs"/>
               </div>
               <p style={{fontSize: '14px', }}>NODEJS</p>
-              <div>100%</div>
+              <div>82%</div>
             </div>
+
+            
           </div>
 
           <div className="essentials" style={showSkillsList}>
@@ -104,7 +107,7 @@ class MeetMe extends Component {
             <img src="/img/ux.svg" height="50px" width="40px" alt="ux/ui"/>
               </div>
               <p style={{fontSize: '14px', }}>UX/UI</p>
-              <div>100%</div>
+              <div>93%</div>
             </div>
 
             <div style={numberIcons}>
@@ -112,7 +115,7 @@ class MeetMe extends Component {
             <img src="/img/selflearner.svg" height="50px" width="40px" alt="selflearner"/>
               </div>
               <p style={{fontSize: '14px', }}>AUTODIDACT</p>
-              <div>100%</div>
+              <div>97%</div>
             </div>
 
             <div style={numberIcons}>
@@ -120,7 +123,7 @@ class MeetMe extends Component {
             <img src="/img/teamplayer.svg" height="50px" width="40px" alt="teamplayer"/>
               </div>
               <p style={{fontSize: '14px', }}>TEAM PLAYER</p>
-              <div>100%</div>
+              <div>99%</div>
             </div>
 
             <div style={numberIcons}>
@@ -128,7 +131,7 @@ class MeetMe extends Component {
                 <img src="/img/think.svg" height="50px" width="40px" alt="think" style={rotate}/>
                 </div>
                 <p style={{fontSize: '14px', }}>PROBLEM SOLVING</p>
-                <div>100%</div>
+                <div>91%</div>
             </div>
           </div>
 
@@ -144,6 +147,7 @@ class MeetMe extends Component {
                 <p style={{fontSize: '14px', margin: '0 auto'}}>{certification.title}</p> 
               </div>) 
             )}
+            {/* <button type="button" style={{display: 'flex', margin: '0 auto', marginTop: '16px', border: 'none', color: '#FFAA19', fontSize: '14px'}}>Watch All</button> */}
           </div>
         </div>
               {this.state.isModal ? <Modal closeModal={this.toggleModal} certificationIndex={this.state.certificationIndex} certifications={this.props.certifications}/> : null}

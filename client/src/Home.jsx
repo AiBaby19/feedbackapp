@@ -6,7 +6,7 @@ class Home extends Component {
     return (
       <div className="app">
         <StrictMode>
-            <h1 style={{textAlign: 'center', letterSpacing: "5px"}}>Front End Developer</h1>
+            <h1 style={{textAlign: 'center', letterSpacing: "5px"}}>Full Stack Developer</h1>
             <br/>
             <h4 style={{textAlign: 'center', margin: '40px', fontWeight: '200'}}><span className="typewriter">Useful Products. Beatifuly Designed. Simple Code.</span></h4>
             <div style={{textAlign: 'center', margin:'50px'}}>

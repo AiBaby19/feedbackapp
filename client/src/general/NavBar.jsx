@@ -32,7 +32,7 @@ class NavBar extends Component {
 
     return ( 
       <div className="navbar" style={navBar}>
-        <div className="logo" style={logo}><NavLink to="/">LOGO</NavLink></div>
+        <div className="logo" style={logo}><NavLink to="/">D_D</NavLink></div>
         <ul style={navList}>
           <li><NavLink to ="/meetme">Meet Me</NavLink></li>
           <li><NavLink to ="/portfoliopage">Portfolio</NavLink></li>

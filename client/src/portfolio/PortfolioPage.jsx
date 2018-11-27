@@ -14,7 +14,7 @@ class PortfolioPage extends Component {
   render() { 
     return ( 
       <div>
-        <h1 style={{fontWeight: '200', width: '90%', margin: '0 auto', marginBottom: '90px', textAlign: "center"}}>My Work</h1>
+        <h1 style={{fontWeight: '200', width: '90%', margin: '0 auto', marginBottom: '90px', textAlign: "center"}}>Recent Work</h1>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap', padding: '0px 150px'}}>
 
           <div className="wrapper">

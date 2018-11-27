@@ -70,7 +70,7 @@ class Contact extends Component {
   render() { 
     return ( 
       <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
-        <h1 style={{margin: '20px 0px 60px 0px'}}>Contact Dror</h1>
+        <h1 style={{margin: '20px 0px 60px 0px'}}>Contact me :D</h1>
         <form action="/contact/send" method="POST" style={{margin: '0 auto', width: '39%', textAlign:'left', fontColor: '#e5e5e5'}}>
           <input type="text" name="name" placeholder="Name" value={this.state.name} onChange={this.handleName} style={placeholderDesign} required/>
           <input type="email" name="email" placeholder="Email" value={this.state.email} onChange={this.handleEmail} style={placeholderDesign} required/>
@@ -79,9 +79,9 @@ class Contact extends Component {
           <button type="button" onClick={()=>this.sendEmail(this.state.name, this.state.email, this.state.message)} style={{display:'flex', justifyContent: 'center', margin: '0 auto', textAlign: 'center', width: '120px', height: '35px', borderRadius: '8px', backgroundColor: '#ffaa19', color: 'white', fontSize: '16px'}}>Send</button>
         </form>
 
-        <div className="social" style={{ display:'flex', flexDirection:'row', margin: '0 auto', textAlign: 'center', justifyContent:'space-between', marginTop:'30px', width:'300px'}}>
-          <img src="/img/git.jpg" alt="git" height="100" width="100"/>
-          <img src="/img/ld.png" alt="ld" height="100" width="100"/>
+        <div className="social" style={{ display:'flex', flexDirection:'row', margin: '0 auto', textAlign: 'center', justifyContent:'space-between', marginTop:'90px', width:'150px'}}>
+          <a href="https://github.com/dvash999"><img src="/img/git.jpg" alt="git" height="50" width="50"/></a>
+          <a href="https://www.linkedin.com/in/dror-dvash/"><img src="/img/ld.png" alt="ld" height="50" width="50"/></a>
         </div>
       </div>
      );
