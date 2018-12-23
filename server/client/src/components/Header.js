@@ -6,8 +6,7 @@ import Payments from './Payments';
 class Header extends Component {
 
   renderContent() {
-    //!!where does this "this.props.auth" is coming from??
-    console.log('propppppssss',this.props.auth);
+
 
     switch (this.props.auth) {
       case null:
@@ -45,7 +44,6 @@ class Header extends Component {
   }
 }
 function mapStateToProps({ auth }) {
-  console.log(auth)
   return { auth }
 };
 
