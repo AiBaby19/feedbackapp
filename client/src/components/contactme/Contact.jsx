@@ -53,14 +53,8 @@ class Contact extends Component {
             body: JSON.stringify({name: name, email: email, message: message})
         })
 
-        // const body = await response
-        //     .text()
-        //     .then(res => console.log(res))
-        //     .catch(err => console.log(err))
-
         this.setState({ thankyoumodal: true });
-
-    }
+    };
 
     render() {
         return (
@@ -93,7 +87,7 @@ class Contact extends Component {
                     <input
                         type="email"
                         name="email"
-                        placeholder="Email"
+                        placeholder="Your Email"
                         value={this.state.email}
                         onChange={this.handleEmail}
                         style={placeholderDesign}
