@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/contact/send', (req, res) => res.status(204));
+// app.get('/contact/send', (req, res) => res.status(204));
 
 app.post('/contact/send', (req, res) => {
 
@@ -45,6 +45,8 @@ app.post('/contact/send', (req, res) => {
   });
 
   res.status(202).send(res.data);
+  
+
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
