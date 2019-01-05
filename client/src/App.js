@@ -2,11 +2,11 @@
 import React, { Component} from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import PortfolioPage from './portfolio/PortfolioPage';
-import MeetMe from './meetme/MeetMe';
-import Contact from './contactme/Contact';
-import NavBar from './general/NavBar';
-import Home from './Home';
+import PortfolioPage from './components/portfoliopage/PortfolioPage';
+import MeetMe from './components/meetme/MeetMe';
+import Contact from './components/contactme/Contact';
+import NavBar from './components/navbar/NavBar';
+import Home from './components/home/Home';
 import {observer, inject} from 'mobx-react';
 
 
@@ -14,35 +14,7 @@ import {observer, inject} from 'mobx-react';
 @inject("store")
 @observer
 class App extends Component {
-  // state = {
-  //   response: '',
-  //   post: '',
-  //   responseToPost: '',
-  // };
-  // componentDidMount() {
-  //   this.callApi()
-  //     .then(res => this.setState({ response: res.express }))
-  //     .catch(err => console.log(err));
-  // }
-  // callApi = async () => {
-  //   const response = await fetch('/api/hello');
-  //   const body = await response.json();
-  //   if (response.status !== 200) throw Error(body.message);
-  //   return body;
-  // };
-  // handleSubmit = async e => {
-  //   e.preventDefault();
-  //   const response = await fetch('/api/world', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ post: this.state.post }),
-  //   });
-  //   const body = await response.text();
-  //   this.setState({ responseToPost: body });
-  // };
-
+ 
   constructor() {
     super();
     this.state = {
