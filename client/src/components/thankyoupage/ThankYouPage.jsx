@@ -5,7 +5,7 @@ class ThankYou extends Component {
   render() { 
     return (  
       <div>
-        Thank you!
+        Thank you for contacting me! :)
       </div>
     );
   }
