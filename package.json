@@ -6,7 +6,7 @@
     "server": "nodemon server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\" "
-    },
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
