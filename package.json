@@ -2,8 +2,8 @@
   "name": "portfoliopro",
   "version": "1.0.0",
   "engines": {
-    "node": "8.1.1",
-    "npm": "5.0.3"
+    "node": "10.4.0",
+    "npm": "6.2.0"
   },
   "scripts": {
     "start": "node index.js",
